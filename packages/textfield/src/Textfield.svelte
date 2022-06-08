@@ -11,7 +11,6 @@
       activeTarget: inputElement,
       initPromise,
     }}
-    use:useActions={use}
     use:forwardEvents
     class={classMap({
       [className]: true,
@@ -111,6 +110,7 @@
           bind:dirty
           bind:invalid
           {updateInvalid}
+          use={use}
           on:blur={() => (focused = false)}
           on:focus={() => (focused = true)}
           on:blur={(event) => dispatch(element, 'blur', event)}
@@ -136,6 +136,7 @@
         bind:dirty
         bind:invalid
         {updateInvalid}
+        use={use}
         on:blur={() => (focused = false)}
         on:focus={() => (focused = true)}
         on:blur={(event) => dispatch(element, 'blur', event)}
